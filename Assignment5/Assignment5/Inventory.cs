@@ -18,11 +18,20 @@ namespace Assignment5
 
         public void Add(Item item)
         {
+            if(items.Count>=slots)
+            {
+                Console.WriteLine("inventory is full");
+                return;
+            }
             items.Add(item);
         }
 
         public void Remove(Item item)
         {
+            if(items.Contains(item)==false)
+            {
+                Console.WriteLine("cannot find item in the inventory");
+            }
             items.Remove(item);
         }
 
