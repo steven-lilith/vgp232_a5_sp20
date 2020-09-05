@@ -9,11 +9,12 @@ namespace Assignment5
     public class Inventory
     {
         int slots;
-        List<Item> items;
+        public List<Item> items;
 
-        public Inventory(int slots)
+        public Inventory(int s)
         {
-            items = new List<Item>(slots);
+            items = new List<Item>(s);
+            slots = s;
         }
 
         public void Add(Item item)
@@ -26,13 +27,13 @@ namespace Assignment5
             items.Add(item);
         }
 
-        public void Remove(Item item)
+        public bool Remove(Item item)
         {
             if(items.Contains(item)==false)
             {
                 Console.WriteLine("cannot find item in the inventory");
             }
-            items.Remove(item);
+            return items.Remove(item);
         }
 
         public void ShowInventory()
