@@ -24,17 +24,14 @@ namespace Assignment5
             myCharacter.TakeDamage(1);
             Assert.AreEqual(99, myCharacter.HealthPoints);
         }
-
-        [TestCase(1, 99)]
-        [TestCase(10, 90)]
-        [TestCase(100, 0)]
-        public void TestDamageCharacter(int damage, int expected)
+        [Test]
+        public void TestRestoreHealth()
         {
-            myCharacter.TakeDamage(damage);
-            int actual = myCharacter.HealthPoints;
-
-            Assert.AreEqual(expected, actual);
+            myCharacter.TakeDamage(1);
+            myCharacter.RestoreHealth(1);
+            Assert.AreEqual(100, myCharacter.HealthPoints);
         }
+
 
     }
 }
